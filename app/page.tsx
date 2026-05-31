@@ -1,6 +1,10 @@
+// example of server component
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetch('https://api.freeapi.app/api/v1/public/randomusers/user/random')
+  const res = await data.json();
+  console.log(res);
   return (
     <div>
       <h1 className="text-3xl font-bold">Hello World</h1>
